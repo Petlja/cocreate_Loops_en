@@ -128,7 +128,7 @@ that the value does not become negative before applying `mod 26`.
 
 ## Advanced Caesar Cipher Assignments (optional)
 
-### Expand the allowed aplhabet
+### Expand the allowed alphabet
 
 Create a console application in any programming language to encrypt and decrypt
 messages using the Caesar cipher. The allowed alphabet for messages (for
