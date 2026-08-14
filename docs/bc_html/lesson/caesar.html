@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Caesar Cipher &#8212; Loops and Cryptography</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=213c783b" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=0a08fe41"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=6b89569b"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=1f5f7585"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Skytale" href="skytale.html" />
+    <link rel="prev" title="A Very Short Introduction to Cryptography" href="cryptography.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="caesar-cipher">
+<h1>Caesar Cipher<a class="headerlink" href="#caesar-cipher" title="Permalink to this heading">¶</a></h1>
+<p>One of the great generals who used coded messages was Julius Caesar, around 50
+BC. When Caesar sent messages to his generals, he encrypted them by shifting
+the letters in the text by a fixed number of places in the alphabet. The
+recipients of the message could decipher it because they knew the shift value
+— while everyone else saw only meaningless text.</p>
+<p>For example, if you wrote <code class="docutils literal notranslate"><span class="pre">NIKOLATESLA</span></code> and shifted each letter three places to
+the right:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+X Y Z A B C D E F G H I J K L M N O P Q R S T U V W
+</pre></div>
+</div>
+<p>The letter <code class="docutils literal notranslate"><span class="pre">N</span></code> becomes <code class="docutils literal notranslate"><span class="pre">K</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code> becomes <code class="docutils literal notranslate"><span class="pre">F</span></code>, and so on. So, each letter is
+replaced by another letter that is a fixed number of positions further along in
+the alphabet. When the end of the alphabet is reached, the sequence continues
+from the beginning. The result of the shift operation by three letters to the
+right would be the encrypted message <code class="docutils literal notranslate"><span class="pre">KFHLIXQBPIX</span></code>. On the other hand, if each
+letter in the resulting word were shifted three letters to the left:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+</pre></div>
+</div>
+<p>The letter <code class="docutils literal notranslate"><span class="pre">K</span></code> becomes <code class="docutils literal notranslate"><span class="pre">N</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span></code> becomes <code class="docutils literal notranslate"><span class="pre">I</span></code>, and so on. The result of the shift
+operation would be the original decrypted message <code class="docutils literal notranslate"><span class="pre">NIKOLATESLA</span></code>.</p>
+<p><img alt="Caesar Cipher Left Shift" src="../_images/caesar1.png" /></p>
+<section id="simple-assignment">
+<h2>Simple assignment<a class="headerlink" href="#simple-assignment" title="Permalink to this heading">¶</a></h2>
+<p>Create a console application in any programming language to encrypt and decrypt
+messages using the Caesar cipher.</p>
+
+    <div class="note-wrapper infonote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/infonote-img.svg" class="note-image infonote-image" /> 
+        <div class="course-content">
+            
+<p>First student (<em>the driver</em>) should be focused on syntax while writing the
+code for message encryption. Second student (<em>the navigator</em>) should review
+each line of code as it is typed, looking for the mistakes, asking questions,
+and suggesting improvements. After that, the students should switch roles,
+and continue with writing decryption code.</p>
+
+    </div></div>
+<p>The allowed alphabet for messages (for plaintext and ciphertext) can include
+only lowercase letters of the English alphabet:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Σ = { a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z }
+</pre></div>
+</div>
+<p>Spaces, uppercase letters, numbers, and other characters are not allowed.</p>
+<p>In the first line of the user input there will be a message <code class="docutils literal notranslate"><span class="pre">m</span></code> no longer than
+one hundred characters, in the second line there will be an integer <code class="docutils literal notranslate"><span class="pre">n</span></code> which
+represents the shift value (<span class="math notranslate nohighlight">\(1 \leq n &lt; 26\)</span>), and in the third line there will
+be an integer <code class="docutils literal notranslate"><span class="pre">s</span></code>, which represents the encryption direction. If <span class="math notranslate nohighlight">\(s=1\)</span> then <code class="docutils literal notranslate"><span class="pre">m</span></code>
+should be encrypted, and if <span class="math notranslate nohighlight">\(s=2\)</span>, then <code class="docutils literal notranslate"><span class="pre">m</span></code> should be decrypted.</p>
+<section id="test-example-1">
+<h3>Test example 1<a class="headerlink" href="#test-example-1" title="Permalink to this heading">¶</a></h3>
+<p>If the input is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nikolatesla
+3
+1
+</pre></div>
+</div>
+<p>the output should be:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>kfhlixqbpix
+</pre></div>
+</div>
+</section>
+<section id="test-example-2">
+<h3>Test example 2<a class="headerlink" href="#test-example-2" title="Permalink to this heading">¶</a></h3>
+<p>If the input is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>kfhlixqbpix
+3
+2
+</pre></div>
+</div>
+<p>the output should be:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nikolatesla
+</pre></div>
+</div>
+</section>
+</section>
+<section id="start-the-assignment">
+<h2>Start the assignment<a class="headerlink" href="#start-the-assignment" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://arena.petlja.org/competition/123-co-create#tab_142923">Implement the cipher here</a></p>
+</section>
+<section id="solution-hints">
+<h2>Solution hints<a class="headerlink" href="#solution-hints" title="Permalink to this heading">¶</a></h2>
+<p>Since there are 26 letters in the English alphabet, the position of each letter
+can be represented by a number from 0 to 25.</p>
+<ul class="simple">
+<li><p>a → 0</p></li>
+<li><p>b → 1</p></li>
+<li><p>c → 2</p></li>
+<li><p>…</p></li>
+<li><p>z → 25</p></li>
+</ul>
+<p>To <strong>encrypt</strong> a letter, you can use the following formula:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>new_letter_position = (current_letter_position + shift_value) mod 26
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">original_position</span></code> represents the numeric value of the letter in the alphabet,
+<code class="docutils literal notranslate"><span class="pre">shift_value</span></code> represents number of positions to move (1–25), and <code class="docutils literal notranslate"><span class="pre">mod</span> <span class="pre">26</span></code>
+ensures that the result wraps around to the start of the alphabet if it goes
+past <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+<p>To <strong>decrypt</strong> a letter, you can use the following formula:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>new_letter_position = (current_letter_position - shift_value + 26) mod 26
+</pre></div>
+</div>
+<p>Similarly like encryption, but you subtract the shift value, and <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">26</span></code> ensures
+that the value does not become negative before applying <code class="docutils literal notranslate"><span class="pre">mod</span> <span class="pre">26</span></code>.</p>
+</section>
+<section id="advanced-caesar-cipher-assignments-optional">
+<h2>Advanced Caesar Cipher Assignments (optional)<a class="headerlink" href="#advanced-caesar-cipher-assignments-optional" title="Permalink to this heading">¶</a></h2>
+<section id="expand-the-allowed-aplhabet">
+<h3>Expand the allowed aplhabet<a class="headerlink" href="#expand-the-allowed-aplhabet" title="Permalink to this heading">¶</a></h3>
+<p>Create a console application in any programming language to encrypt and decrypt
+messages using the Caesar cipher. The allowed alphabet for messages (for
+plaintext and ciphertext) can include lowercase and uppercase letters of the
+English alphabet, spaces, numbers, and punctuation!</p>
+<p>The application must encrypt or decrypt only lowercase and uppercase letters.
+Spaces, numbers, and punctuation marks should remain unchanged during
+encryption or decryption.</p>
+<p>In the first line of the standard input there will be a message <code class="docutils literal notranslate"><span class="pre">m</span></code> no longer
+than one hundred characters, in the second line there will be an integer <code class="docutils literal notranslate"><span class="pre">n</span></code>
+which represents the shift (<span class="math notranslate nohighlight">\(1 \leq n &lt; 26\)</span>), and in the third line there will
+be an integer <code class="docutils literal notranslate"><span class="pre">s</span></code>, which represents the encryption direction. If <span class="math notranslate nohighlight">\(s=1\)</span> then <code class="docutils literal notranslate"><span class="pre">m</span></code>
+should be encrypted, and if <span class="math notranslate nohighlight">\(s=2\)</span>, then <code class="docutils literal notranslate"><span class="pre">m</span></code> should be decrypted.</p>
+</section>
+</section>
+<section id="use-the-functions">
+<h2>Use the functions<a class="headerlink" href="#use-the-functions" title="Permalink to this heading">¶</a></h2>
+<p>Create two functions: one for encrypting messages and one for decrypting
+messages. Use the created functions in your main program.</p>
+</section>
+<section id="create-a-class">
+<h2>Create a Class<a class="headerlink" href="#create-a-class" title="Permalink to this heading">¶</a></h2>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">CaesarCipher</span></code> class that contains:</p>
+<ul class="simple">
+<li><p>a constructor with a parameter that accepts the shift value and ensures that
+the value is within the allowed range,</p></li>
+<li><p>a private property to store the shift value, with getter and setter methods,</p></li>
+<li><p>a public method to encrypt the message,</p></li>
+<li><p>a public method to decrypt the message, and</p></li>
+<li><p>optionally, include a private method to process messages, which will be used
+by both encryption and decryption methods.</p></li>
+</ul>
+<p>Use the created class in your main program.</p>
+</section>
+<section id="accept-command-line-arguments">
+<h2>Accept Command Line Arguments<a class="headerlink" href="#accept-command-line-arguments" title="Permalink to this heading">¶</a></h2>
+<p>Instead of waiting for the user input, create a console application that
+accepts the following command line arguments:</p>
+<ol class="arabic simple">
+<li><p>argument <code class="docutils literal notranslate"><span class="pre">m</span></code> for specifying the message,</p></li>
+<li><p>argument <code class="docutils literal notranslate"><span class="pre">n</span></code> for specifying the shift value (<code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">25</span></code>), and</p></li>
+<li><p>argument <code class="docutils literal notranslate"><span class="pre">s</span></code> for specifying the shift direction (<code class="docutils literal notranslate"><span class="pre">1</span></code> for encryption, and <code class="docutils literal notranslate"><span class="pre">2</span></code>
+for decryption).</p></li>
+</ol>
+</section>
+<section id="encrypt-and-decrypt-files">
+<h2>Encrypt and decrypt files<a class="headerlink" href="#encrypt-and-decrypt-files" title="Permalink to this heading">¶</a></h2>
+<p>Use the knowledge you gained so far to create a console application for
+encrypting and decrypting text files. Your application should accept the
+following command line arguments:</p>
+<ol class="arabic simple">
+<li><p>argument <code class="docutils literal notranslate"><span class="pre">m</span></code> for specifying the filename (or a path),</p></li>
+<li><p>argument <code class="docutils literal notranslate"><span class="pre">n</span></code> for specifying the shift value (<code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">25</span></code>), and</p></li>
+<li><p>argument <code class="docutils literal notranslate"><span class="pre">s</span></code> for specifying the shift direction (<code class="docutils literal notranslate"><span class="pre">1</span></code> for encryption, and <code class="docutils literal notranslate"><span class="pre">2</span></code>
+for decryption).</p></li>
+</ol>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

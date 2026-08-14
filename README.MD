@@ -1,1 +1,1 @@
-Template za kreiranje PLCT kurs repozitorijuma
+Template repository for creating a PLCT course

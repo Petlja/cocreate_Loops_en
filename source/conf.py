@@ -1,7 +1,7 @@
 
-project = 'PLCT Template'
-copyright = '2025, Fondacija Petlja'
-author = 'Fondacija Petlja'
+project = 'Loops and Cryptography'
+copyright = '2025, Petlja Foundation'
+author = 'Petlja Foundation'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -23,7 +23,7 @@ myst_enable_extensions = [ "colon_fence",
 
 templates_path = ['_templates']
 exclude_patterns = []
-language = 'sr-Latn'
+language = 'en'
 
 import plct_sphinx_components
 html_static_path = ['_static'] + plct_sphinx_components.extensions.static_dirs()
@@ -33,7 +33,7 @@ copybutton_selector = "div:not(.no-copybutton) > div.highlight > pre"
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_title = 'PLCT Template'
+html_title = 'Loops and Cryptography'
 
 def get_builder_from_args():
     import sys

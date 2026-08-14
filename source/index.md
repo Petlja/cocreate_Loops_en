@@ -6,9 +6,9 @@ short_description: Introduction to Cryptography with Loops
 long_description: >
     <p>In this course, you will learn to apply loops on characters and strings to implement basic cryptographic algorithms.</p>
     <p>
-    <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">
+    <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.en">
     <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
-    <br>This course was published by Petlja Foundation under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">Creative Commons Attribution 4.0 International License (CC BY 4.0)</a>.
+    <br>This course was published by Petlja Foundation under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.en">Creative Commons Attribution 4.0 International License (CC BY 4.0)</a>.
     </p>
 
 will_learn:
@@ -37,7 +37,7 @@ to implement basic cryptographic algorithms.
 Course author: Petlja Foundation
 
 This course is published by Petlja Foundation under the
-[Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.sr_LATN).
+[Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.en).
 
 ```{toctree}
 :maxdepth: 2

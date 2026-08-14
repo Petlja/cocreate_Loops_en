@@ -93,7 +93,7 @@ nikolatesla
 
 ## Start the assignment
 
-[Implement the cypher here ](https://arena.petlja.org/sr-Latn-RS/competition/123-co-create#tab_142923)
+[Implement the cipher here](https://arena.petlja.org/competition/123-co-create#tab_142923)
 
 ## Solution hints
 

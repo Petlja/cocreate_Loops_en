@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Conditions and loops &#8212; Loops and Cryptography</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=213c783b" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=0a08fe41"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=6b89569b"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=1f5f7585"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Characters and strings" href="char_string.html" />
+    <link rel="prev" title="Good collaboration rules" href="collaboration.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="conditions-and-loops">
+<h1>Conditions and loops<a class="headerlink" href="#conditions-and-loops" title="Permalink to this heading">¶</a></h1>
+<p>To successfully master the material in the next lesson, it is necessary to know
+the basic facts about working with conditions and loops.</p>
+<section id="conditions">
+<h2>Conditions<a class="headerlink" href="#conditions" title="Permalink to this heading">¶</a></h2>
+<p>In most modern programming languages, conditional statements are used to make
+decisions and control the flow of a program. The most common constructs are:</p>
+<ul class="simple">
+<li><p>if</p></li>
+<li><p>if-else</p></li>
+<li><p>switch-case</p></li>
+</ul>
+<p>Although the syntax differs between languages, the core logic is the same.</p>
+<section id="the-if-statement">
+<h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> Statement<a class="headerlink" href="#the-if-statement" title="Permalink to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement executes a block of code only if a specified condition is
+true.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>if condition then
+    statement(s)
+</pre></div>
+</div>
+<p>For example, in C, C++, C#, and Java, if you want check if <code class="docutils literal notranslate"><span class="pre">x</span></code> is greater than
+<code class="docutils literal notranslate"><span class="pre">0</span></code> the conditional statement can be written as:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-if-else-statement">
+<h3>The <code class="docutils literal notranslate"><span class="pre">if-else</span></code> Statement<a class="headerlink" href="#the-if-else-statement" title="Permalink to this heading">¶</a></h3>
+<p>The if-else statement executes one block of code if the condition is true, and
+another block if it is false.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>if condition then
+    statement(s)
+else
+    statement(s)
+</pre></div>
+</div>
+<p>For example, in C, C++, C#, and Java, if you want check if <code class="docutils literal notranslate"><span class="pre">x</span></code> is greater than
+<code class="docutils literal notranslate"><span class="pre">0</span></code> or not greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, the conditional statement can be written as:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-switch-case-statement">
+<h3>The <code class="docutils literal notranslate"><span class="pre">switch-case</span></code> Statement<a class="headerlink" href="#the-switch-case-statement" title="Permalink to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">switch-case</span></code> statement is useful when comparing the same variable against
+many possible values. It can be more readable than using many <code class="docutils literal notranslate"><span class="pre">if-else</span></code>
+statements.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>switch expression do
+    case value1:
+        statement(s)
+    case value2:
+        statement(s)
+    ...
+    default:
+        statement(s)
+</pre></div>
+</div>
+<p>For example, in C, C++, C#, and Java, if you want to determine the name of the
+day based on its ordinal number in the week, the conditional statement can be
+written as:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">day</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="m">1</span><span class="p">:</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Monday&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="m">2</span><span class="p">:</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Tuesday&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="m">3</span><span class="p">:</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Wednesday&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="k">default</span><span class="p">:</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="nesting-conditions">
+<h3>Nesting conditions<a class="headerlink" href="#nesting-conditions" title="Permalink to this heading">¶</a></h3>
+<p>Conditional statements can be placed inside other conditional statements - this
+is called <strong>nesting</strong>. Nested conditions are useful when a decision depends on
+the result of a previous decision. For example, you might first check if a user
+is logged in, and then, inside that block, check if they have permission to
+perform a certain action.</p>
+</section>
+</section>
+<section id="loops">
+<h2>Loops<a class="headerlink" href="#loops" title="Permalink to this heading">¶</a></h2>
+<p>In most modern programming languages, loops are usually implemented using one
+of the following constructs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> (or <code class="docutils literal notranslate"><span class="pre">while-do</span></code>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">do-while</span></code> (or <code class="docutils literal notranslate"><span class="pre">repeat-until</span></code>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">foreach</span></code> (or <code class="docutils literal notranslate"><span class="pre">for-each</span></code>).</p></li>
+</ul>
+<p>Although the syntax differs between languages, the core logic is the same.</p>
+<section id="the-for-loop">
+<h3>The <code class="docutils literal notranslate"><span class="pre">for</span></code> Loop<a class="headerlink" href="#the-for-loop" title="Permalink to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is used when the number of iterations is finite and
+predetermined.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>for variable ← start to end do
+    statement(s)
+</pre></div>
+</div>
+<p>For example, in C, C++, C#, and Java, a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate through numbers
+from 0 to 9 can be written as:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">9</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-while-loop">
+<h3>The <code class="docutils literal notranslate"><span class="pre">while</span></code> Loop<a class="headerlink" href="#the-while-loop" title="Permalink to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> (or <code class="docutils literal notranslate"><span class="pre">while-do</span></code>) loop is used when the number of iterations is
+unknown in advance. The condition is checked before each iteration, so this
+is called a <strong>loop with a precondition</strong>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>while condition do
+    statement(s)
+</pre></div>
+</div>
+<p>For example, in C, C++, C#, and Java, a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to iterate through numbers
+from 0 to 9 can be written as:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">9</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-do-while-loop">
+<h3>The <code class="docutils literal notranslate"><span class="pre">do-while</span></code> Loop<a class="headerlink" href="#the-do-while-loop" title="Permalink to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">do-while</span></code> (or <code class="docutils literal notranslate"><span class="pre">repeat-until</span></code>) loop also supports an unknown number of
+iterations, but the condition is checked after each iteration. This is called a
+<strong>loop with a postcondition</strong>, and it always executes at least once.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>repeat
+    statement(s)
+until condition
+</pre></div>
+</div>
+<p>For example, in C, C++, C#, and Java, a <code class="docutils literal notranslate"><span class="pre">do-while</span></code> loop to iterate through
+numbers from 0 to 9 can be written as:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">9</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="the-foreach-loop">
+<h3>The <code class="docutils literal notranslate"><span class="pre">foreach</span></code> Loop<a class="headerlink" href="#the-foreach-loop" title="Permalink to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">foreach</span></code> (or <code class="docutils literal notranslate"><span class="pre">for-each</span></code>) loop is used to iterate over all elements in a
+collection or array. It simplifies iteration when you don’t need to know the
+index.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>for-each element in collection do
+    statement(s)
+</pre></div>
+</div>
+<p>For example, a <code class="docutils literal notranslate"><span class="pre">for-each</span></code> loop to iterate through array <code class="docutils literal notranslate"><span class="pre">nums</span></code> can be written
+in C++ as:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">nums</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">};</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…or in C# as…</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="p">};</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span><span class="w">  </span>
+</pre></div>
+</div>
+<p>…or in Java as:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">};</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span><span class="w">   </span>
+</pre></div>
+</div>
+</section>
+<section id="nesting-loops">
+<h3>Nesting loops<a class="headerlink" href="#nesting-loops" title="Permalink to this heading">¶</a></h3>
+<p>Loops can also be nested, meaning that one loop is placed inside another. This
+is common when working with multi-dimensional data, such as traversing rows and
+columns in a matrix or iterating over a grid in a game. Furthermore, loops and
+conditions can be freely combined — for example, a loop may contain an <code class="docutils literal notranslate"><span class="pre">if</span></code>
+statement to process only certain elements, or an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement may contain a
+loop to perform repeated actions when a condition is true. This ability to mix
+and nest loops and conditions allows for the creation of complex algorithms
+while keeping the underlying logic structured.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
