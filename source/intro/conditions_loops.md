@@ -6,10 +6,6 @@ Let's recall some basics! If this area is still unclear to you, go through the l
 
 Link to Petlja's lesson on loops is [here](https://petlja.org/en/biblioteka/r/lekcije/python-za-svakog/01_karel_eng_02_for)
 
-```{learnmorenote} For teachers
-
-Link to Petlja's lesson on loops: https://petlja.org/en/biblioteka/r/lekcije/python-za-svakog/01_karel_eng_02_for
-```
 
 ## Conditions
 
