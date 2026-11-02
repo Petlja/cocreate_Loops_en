@@ -101,7 +101,7 @@ nikolatesla
 
 ## Do the assignment
 
-[Implement the cypher here ](https://arena.petlja.org/sr-Latn-RS/competition/123-co-create#tab_142947)
+Do the task. Write your solution in your notebook or document.
 
 ## Solution hints
 
