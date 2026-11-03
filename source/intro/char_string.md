@@ -156,6 +156,10 @@ Although some Latin and Cyrillic letters appear to be the same, their Unicode
 code values are different. For example, the Latin capital letter A is encoded
 as U+0041, while the Cyrillic capital letter A is encoded as U+0410.
 
+These are only examples from the Serbian language. If you are interested, you can always learn more about specific characters used in other languages.
+
+
+
 ## Strings
 
 A string is a sequence of characters arranged in a specific order. Each
