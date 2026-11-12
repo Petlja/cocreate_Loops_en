@@ -1,19 +1,12 @@
-# Characters and strings
+# Caracteres y cadenas de texto
 
-Understanding how characters and strings are represented will help you to
-handle text correctly in the following lesson, ensuring proper data processing.
+Comprender cómo se representan los caracteres y las cadenas de texto te ayudará a procesar texto correctamente en la siguiente lección y te permitirá asegurarte de que tratas los datos de forma adecuada.
 
-The character data type, commonly referred to as char, is used to represent
-individual characters. Since computers can only store binary values, characters
-must be encoded as numbers. In modern computer systems, either ASCII or Unicode
-encoding schemes are used. Older programming languages (e.g., C) typically rely
-on ASCII, while modern languages (e.g., C#) support Unicode.
+El tipo de dato para caracteres, conocido como char, se utiliza para representar caracteres individuales. Como los ordenadores solo pueden almacenar valores binarios, los caracteres deben codificarse mediante números. En los sistemas informáticos modernos se utilizan los sistemas de codificación ASCII o Unicode. Los lenguajes de programación más antiguos (por ejemplo, C) suelen utilizar ASCII, mientras que los lenguajes modernos (por ejemplo, C#) admiten Unicode.
 
 ## ASCII
 
-ASCII *(American Standard Code for Information Interchange)* is a 7-bit binary
-code, represented in memory with 8 bits (one byte). It defines 128 characters,
-including letters, digits, punctuation marks, and control characters:
+ASCII *(American Standard Code for Information Interchange)* es un código binario de 7 bits que se representa en memoria mediante 8 bits (un byte). Define 128 caracteres, entre los que se incluyen letras, dígitos, signos de puntuación y caracteres de control:
 
 ```text
 DEC OCT HEX CH    DEC OCT HEX CH    DEC OCT HEX CH    DEC OCT HEX CH
@@ -54,14 +47,12 @@ DEC OCT HEX CH    DEC OCT HEX CH    DEC OCT HEX CH    DEC OCT HEX CH
 
 ## Unicode
 
-Unicode is an extended character set that includes all ASCII codes as its first
-part. In Unicode, the first 128 code values (U+0000 to U+007F) are completely
-identical to ASCII codes. Beyond that, Unicode defines more than 150,000
-characters from writing systems around the world. For example, the specific
-Latin characters of the Serbian alphabet are defined like this...
+Unicode es un conjunto ampliado de caracteres que incluye todos los códigos ASCII en su primera parte. En Unicode, los primeros 128 valores de código (U+0000 a U+007F) son exactamente idénticos a los códigos ASCII. Además, Unicode define más de 150.000 caracteres de sistemas de escritura de todo el mundo.
 
-| Code   | Symbol | DEC     |
-|--------|--------|---------|
+Por ejemplo, los caracteres latinos específicos del alfabeto serbio se definen de la siguiente manera:
+
+| Código  | Símbolo | DEC     |
+|--------|--------|----------|
 | U+0106 | Ć      | 262     |
 | U+0107 | ć      | 263     |
 | U+010C | Č      | 268     |
@@ -73,10 +64,10 @@ Latin characters of the Serbian alphabet are defined like this...
 | U+017D | Ž      | 381     |
 | U+017E | ž      | 382     |
 
-...Latin letters written with two characters are defined like this...
+...Las letras latinas representadas mediante dos caracteres se definen así:
 
-| Code   | Symbol | DEC     |
-|--------|--------|---------|
+| Código  | Símbolo | DEC     |
+|--------|--------|----------|
 | U+01C4 | Ǆ      | 452     |
 | U+01C5 | ǅ      | 453     |
 | U+01C6 | ǆ      | 454     |
@@ -87,10 +78,10 @@ Latin characters of the Serbian alphabet are defined like this...
 | U+01CB | ǋ      | 459     |
 | U+01CC | ǌ      | 460     |
 
-...and the Cyrillic characters of the Serbian alphabet are defined like this:
+...Y los caracteres cirílicos del alfabeto serbio se definen así:
 
-| Code   | Symbol | DEC     |
-|--------|--------|---------|
+| Código   | Símbolo | DEC     |
+|--------|--------|----------|
 | U+0410 | А      | 1040    |
 | U+0411 | Б      | 1041    |
 | U+0412 | В      | 1042    |
@@ -152,21 +143,12 @@ Latin characters of the Serbian alphabet are defined like this...
 | U+045F | џ      | 1119    |
 | U+0448 | ш      | 1096    |
 
-Although some Latin and Cyrillic letters appear to be the same, their Unicode
-code values are different. For example, the Latin capital letter A is encoded
-as U+0041, while the Cyrillic capital letter A is encoded as U+0410.
+Nota: Esta tabla está adaptada de la versión serbia del curso y muestra el alfabeto cirílico serbio con el código Unicode y el valor decimal de cada letra. En la versión catalana se utiliza el alfabeto latino, por lo que las letras y sus códigos son diferentes (por ejemplo, la «A» es U+0041 = 65 y la «a» es U+0061 = 97). Lo más importante es comprender que cada carácter se representa mediante un número, independientemente del alfabeto utilizado.
 
-These are only examples from the Serbian language. If you are interested, you can always learn more about specific characters used in other languages.
+Es importante tener en cuenta que, aunque algunas letras latinas y cirílicas parecen iguales, sus valores Unicode son diferentes. Por ejemplo, la letra A mayúscula latina se codifica como U+0041, mientras que la letra A mayúscula cirílica se codifica como U+0410.
 
+## Cadenas
 
+Una cadena de texto es una secuencia de caracteres ordenados de una forma determinada. Cada carácter puede ser una letra, un dígito, un signo de puntuación, un espacio, etc. Las cadenas de texto son fundamentales en informática, ya que permiten representar texto, nombres de archivos, datos introducidos por el usuario y mucho más.
 
-## Strings
-
-A string is a sequence of characters arranged in a specific order. Each
-character can be a letter, digit, punctuation mark, whitespace, or symbol.
-Strings are fundamental in computing because they represent text, file names,
-user input, and much more.
-
-A string is typically represented as a contiguous block of memory. Some systems
-terminate strings with a special marker like a null character `'\0'` to
-indicate the end, while others may store the length explicitly.
+Por lo general, una cadena se representa como un bloque continuo de memoria. Algunos sistemas terminan las cadenas con un carácter especial, normalmente el carácter nulo '\0' (en C/C++), mientras que otros almacenan la longitud de la cadena como parte del tipo de dato (en Python o C#).
